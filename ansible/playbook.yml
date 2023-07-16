@@ -1,0 +1,20 @@
+---
+
+- hosts: lightsail-instances
+  vars:
+    packages:
+      present:
+        - wireguard
+        - wireguard-tools
+        - htop
+        - git
+    local_docker_compose_apps_path: "{{ playbook_dir }}/data/docker-compose-deployments"
+    remote_folder_path: "~/projects"
+  roles:
+    #- upgrade
+    - install_packages
+    #- install_oh-my-zsh
+    #- install_docker
+    #- deploy_docker_compose
+    #- undeploy_docker_compose
+    #- reboot
