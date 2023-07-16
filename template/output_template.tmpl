@@ -1,0 +1,4 @@
+[lightsail-instances]
+    %{ for instance in instances_data ~}
+    ${instance.instance_name} ansible_host=${instance.static_ip} ansible_user=${instance.username} ansible_ssh_private_key_file=${instance.local_ssh_pubkey_path}
+    %{ endfor ~}
