@@ -11,7 +11,7 @@ variable "project_tag" {
 }
 
 variable "local_ssh_pubkey_path" {
-  description = "Name for the project"
+  description = "Local path to public key used for authentication"
   default     = "~/.ssh/aws_pj.pub"
 }
 
