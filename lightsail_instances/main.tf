@@ -9,7 +9,7 @@ terraform {
 
 # Import existing Key Pair into  Lightsail
 resource "aws_lightsail_key_pair" "key_pair" {
-  name       = "${var.project_name}_key_pair"
+  name       = "${var.project_name}_${data.aws_caller_identity.current.user_id}_key_pair"
   public_key = file("${var.local_ssh_pubkey_path}")
 }
 
